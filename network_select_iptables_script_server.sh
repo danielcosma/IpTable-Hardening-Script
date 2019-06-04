@@ -9,7 +9,6 @@ else
 	:
 fi
 
-
 ###
 ### general
 ###
@@ -19,47 +18,9 @@ fi
 # INIVIDUAL REJECTS FIRST
 # THEN OPEN IT UP
 # BLOCK ALL
-
-
 ###
 ### ports
 ###
-# input ports separated by a single whitespace
-# services_all opens the port for all ips (internal and external)
-# services_internal opens the port for the specified subnet, the tun and tap devices
-
-# input udp all
-INPUT_SERVICES_UDP_ALL="1196 1197 51820"
-# input tcp all
-INPUT_SERVICES_TCP_ALL="80 443"
-# input udp internal
-INPUT_SERVICES_UDP_INTERNAL="53 137 138"
-# input tcp internal
-INPUT_SERVICES_TCP_INTERNAL="21 22 139 445 889 3306 4430 5900 60000:60100"
-# output udp all dport
-OUTPUT_SERVICES_UDP_ALL_DPORT="53 67 123 137 138 443 1196 1197 5353"
-# output tcp all dport
-OUTPUT_SERVICES_TCP_ALL_DPORT="21 22 43 53 80 139 443 445 515 587 631 889 3389 4430 5900 8085 9100 9418 11371 60000:60100"
-OUTPUT_SERVICES_TCP_ALL_DPORT_FTP="1024:"
-# output udp all sport
-OUTPUT_SERVICES_UDP_ALL_SPORT="53 67 123 137 138 443 1196 1197"
-# output tcp all sport
-OUTPUT_SERVICES_TCP_ALL_SPORT="21 22 53 80 139 443 445 515 631 889 3389 4430 5900 8085 9100 9418 11371 60000:60100"
-OUTPUT_SERVICES_TCP_ALL_SPORT_FTP="1024:"
-# output udp internal
-OUTPUT_SERVICES_UDP_INTERNAL=""
-# output tcp internal
-OUTPUT_SERVICES_TCP_INTERNAL=""
-# forward udp internal
-FORWARD_SERVICES_UDP_INTERNAL="5353"
-# forward tcp internal
-FORWARD_SERVICES_TCP_INTERNAL="80 443 515 631 3389 5900 8085 9100"
-# service subnet
-#RESCUE_SUBNET="172.25.143.0/24"
-#INPUT_SERVICES_UDP_RESCUE_INTERNAL=""
-#INPUT_SERVICES_TCP_RESCUE_INTERNAL="22"
-#OUTPUT_SERVICES_UDP_RESCUE_INTERNAL=""
-#OUTPUT_SERVICES_TCP_RESCUE_INTERNAL="22"
 
 # documentation implemented services
 #       ssh                     		TCP             	22
@@ -101,6 +62,42 @@ FORWARD_SERVICES_TCP_INTERNAL="80 443 515 631 3389 5900 8085 9100"
 #		wireguard client				UDPd out all		51820
 #		mariadb							TCPd in internal	3306
 
+# input ports separated by a single whitespace
+# services_all opens the port for all ips (internal and external)
+# services_internal opens the port for the specified subnet, the tun and tap devices
+
+# input udp all
+INPUT_SERVICES_UDP_ALL="1196 1197 51820"
+# input tcp all
+INPUT_SERVICES_TCP_ALL="80 443"
+# input udp internal
+INPUT_SERVICES_UDP_INTERNAL="53 137 138"
+# input tcp internal
+INPUT_SERVICES_TCP_INTERNAL="21 22 139 445 889 3306 4430 5900 60000:60100"
+# output udp all dport
+OUTPUT_SERVICES_UDP_ALL_DPORT="53 67 123 137 138 443 1196 1197 5353"
+# output tcp all dport
+OUTPUT_SERVICES_TCP_ALL_DPORT="21 22 43 53 80 139 443 445 515 587 631 889 3389 4430 5900 8085 9100 9418 11371 60000:60100"
+OUTPUT_SERVICES_TCP_ALL_DPORT_FTP="1024:"
+# output udp all sport
+OUTPUT_SERVICES_UDP_ALL_SPORT="53 67 123 137 138 443 1196 1197"
+# output tcp all sport
+OUTPUT_SERVICES_TCP_ALL_SPORT="21 22 53 80 139 443 445 515 631 889 3389 4430 5900 8085 9100 9418 11371 60000:60100"
+OUTPUT_SERVICES_TCP_ALL_SPORT_FTP="1024:"
+# output udp internal
+OUTPUT_SERVICES_UDP_INTERNAL=""
+# output tcp internal
+OUTPUT_SERVICES_TCP_INTERNAL=""
+# forward udp internal
+FORWARD_SERVICES_UDP_INTERNAL="5353"
+# forward tcp internal
+FORWARD_SERVICES_TCP_INTERNAL="80 443 515 631 3389 5900 8085 9100"
+# service subnet
+#RESCUE_SUBNET="172.25.143.0/24"
+#INPUT_SERVICES_UDP_RESCUE_INTERNAL=""
+#INPUT_SERVICES_TCP_RESCUE_INTERNAL="22"
+#OUTPUT_SERVICES_UDP_RESCUE_INTERNAL=""
+#OUTPUT_SERVICES_TCP_RESCUE_INTERNAL="22"
 
 ###
 ### network
